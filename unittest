@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 27 09:56:52 2015
+
+@author: admin
+"""
+
+import unittest 
+
+class TestStringMethods(unittest.TestCase):
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+        
+    def test_isupper(self):
+        self.assertFalse('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+    
+    def test_split(self): 
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        with self.assertRaises(TypeError):
+            s.split(3)
+            
+if __name__ == '__main__':
+    unittest.main()
+    
+    
